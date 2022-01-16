@@ -160,9 +160,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="game.cpp" />
+    <ClCompile Include="game_state_start.cpp" />
     <ClCompile Include="metrosim.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="game.hpp" />
+    <ClInclude Include="game_state.hpp" />
+    <ClInclude Include="game_state_editor.hpp" />
+    <ClInclude Include="game_state_start.hpp" />
     <ClInclude Include="metrosim.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
