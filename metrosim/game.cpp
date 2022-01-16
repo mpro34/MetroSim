@@ -5,6 +5,15 @@
 #include "game.hpp"
 #include "game_state.hpp"
 
+
+/*
+	@brief - Fill the member texture manager with input textures.
+*/
+void Game::loadTextures()
+{
+	texmgr.loadTexture("background", "media/background.png");
+}
+
 /*
 	@brief - push input game state onto states cache.
 */
@@ -69,8 +78,13 @@ void Game::gameLoop()
 */
 Game::Game()
 {
+	this->loadTextures(); // Load all textures
+
 	this->window.create(sf::VideoMode(800, 600), "Metro Sim");
 	this->window.setFramerateLimit(60);
+
+	// Set specific textures once they are loaded and the window is ready.
+	this->background.setTexture(this->texmgr.getRef("background"));
 }
 
 /*
