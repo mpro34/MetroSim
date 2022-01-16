@@ -43,13 +43,16 @@ GameState* Game::peekState()
 	return this->states.top();
 }
 
+/*
+	@brief - main game loop
+*/
 void Game::gameLoop()
 {
 	sf::Clock clock;
 
 	while (this->window.isOpen())
 	{
-		sf::Time elapsed = clock.restart();
+		sf::Time elapsed = clock.restart(); // return the time since clock started.
 		float dt = elapsed.asSeconds();
 
 		if (peekState() == nullptr) continue;
@@ -61,13 +64,19 @@ void Game::gameLoop()
 	}
 }
 
+/*
+	@brief - Create a new window and rate limit to 60 fps.
+*/
 Game::Game()
 {
 	this->window.create(sf::VideoMode(800, 600), "Metro Sim");
 	this->window.setFramerateLimit(60);
 }
 
+/*
+	@brief - Clear all cached state
+*/
 Game::~Game()
 {
-	while (!this->states.empty()) popState; // Clear all cached state
+	while (!this->states.empty()) popState;
 }
