@@ -17,7 +17,7 @@ void GameStateStart::draw(const float dt)
 
 void GameStateStart::update(const float dt)
 {
-
+	//TODO
 }
 
 void GameStateStart::handleInput()

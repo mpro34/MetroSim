@@ -10,7 +10,7 @@ class GameStateStart : public GameState
 
 public:
 	virtual void draw(const float dt);
-	virtual void updatE(const float dt);
+	virtual void update(const float dt);
 	virtual void handleInput();
 
 	GameStateStart(Game* game);

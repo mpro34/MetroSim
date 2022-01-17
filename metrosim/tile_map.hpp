@@ -39,8 +39,13 @@ public:
 	void updateDirection(TileType tileType);
 
 	/* Black map constructor */
-	TileMap() :
-		tileSize{ 8 }, width{ 0 }, height{ 0 }, numRegions[0]{ 1 } {}
+	TileMap()
+	{
+		this->tileSize = 8;
+		this->width = 0;
+		this->height = 0;
+		this->numRegions[0] = 1;
+	}
 	
 	/* Load map from file constructor */
 	TileMap(const std::string& filename, unsigned int width, unsigned int height,

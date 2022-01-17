@@ -25,36 +25,36 @@ public:
 
 	sf::Sprite sprite;
 
-	TileType tileType;
+	TileType tileType{ TileType::GRASS };
 
 	/* Tile variant, allowing for different looking versions of the same tile */
-	int tileVariant;
+	int tileVariant{ 0 };
 
 	/* Region IDs of the tile, tiles in the same region are connected. 
 		First is for the transport
 	*/
-	unsigned int regions[1];
+	unsigned int regions[1]{ 0 };
 
 	/* Placement cost of the tile */
-	unsigned int cost;
+	unsigned int cost{ 0 };
 
 	/* Current residents / employees */
-	double population;
+	double population{ 0.0 };
 
 	/* Maximum population per growth stage / tile variant */
-	unsigned int maxPopPerLevel;
+	unsigned int maxPopPerLevel{ 0 };
 
 	/* Maximum number of building levels */
-	unsigned int maxLevels;
+	unsigned int maxLevels{ 1 };
 
 	/* Production output per customer/worker per day, either monetary or goods */
-	float production;
+	float production{ 0.0f };
 
 	/* Goods stored */
-	float storedGoods;
+	float storedGoods{ 0.0f };
 
 	/* Constructor */
-	Tile() {}
+	Tile() = default;
 
 	Tile(const unsigned int _tilesize, 
 		const unsigned int _height, 

@@ -155,5 +155,5 @@ Game::Game()
 */
 Game::~Game()
 {
-	while (!this->states.empty()) popState;
+	while (!this->states.empty()) popState();
 }

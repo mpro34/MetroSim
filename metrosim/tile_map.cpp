@@ -12,7 +12,7 @@ void TileMap::load(const std::string& filename, unsigned int width, unsigned int
 	this->width = width;
 	this->height = height;
 
-	for (int pos = 0; pos < this->width * this->height; ++pos)
+	for (unsigned int pos = 0; pos < this->width * this->height; ++pos)
 	{
 		this->resources.push_back(255);
 
@@ -99,7 +99,11 @@ void TileMap::updateDirection(TileType tileType)
 
             if (this->tiles[pos].tileType != tileType) continue;
 
-            bool adjacentTiles[3][2] = { {0,0,0},{0,0,0},{0,0,0} };
+            bool adjacentTiles[3][3] = { 
+                {0,0,0},
+                {0,0,0},
+                {0,0,0} 
+            };
 
             /* Check for adjacent tiles of the same type */
             if (x > 0 && y > 0)
